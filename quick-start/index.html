@@ -1,0 +1,43 @@
+<!DOCTYPE html><html lang="en" data-theme="light"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Open-source Passive House modeling tools for Rhino / Grasshopper. Export to WUFI-Passive and PHPP."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><title>Quick Start — PH-Tools</title><script>
+      (function () {
+        try {
+          var t = localStorage.getItem("ph-tools:theme");
+          if (t) document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {}
+      })();
+    </script><link rel="stylesheet" href="/_astro/contact.BUg2kw8E.css"></head> <body> <header class="site-header"> <a href="/" class="site-header__logo"> <svg class="logo-mark" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"> <rect x="2" y="14" width="28" height="16" rx="2" fill="currentColor" opacity="0.15"></rect> <path d="M16 2L2 14h28L16 2z" fill="currentColor"></path> <rect x="12" y="18" width="8" height="12" rx="1" fill="currentColor" opacity="0.5"></rect> </svg>
+PH-TOOLS
+</a> <nav class="site-header__nav"> <a href="/install/" class>Install</a> <a href="/quick-start/" class="nav-active">Quick Start</a> <a href="/resources/" class>Resources</a> <a href="/contact/" class>Contact</a> <a href="https://docs.passivehousetools.com" target="_blank">Docs</a> <a href="https://github.com/PH-Tools" target="_blank">GitHub</a> <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme"> <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"> <circle cx="12" cy="12" r="5"></circle><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path> </svg> <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none"> <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> </svg> </button> </nav> <button class="hamburger" id="hamburgerBtn" aria-label="Open menu"> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"> <path d="M3 12h18M3 6h18M3 18h18"></path> </svg> </button> </header> <div class="mobile-nav" id="mobileNav"> <a href="/install/">Install</a> <a href="/quick-start/">Quick Start</a> <a href="/resources/">Resources</a> <a href="/contact/">Contact</a> <a href="https://docs.passivehousetools.com" target="_blank">Docs</a> <a href="https://github.com/PH-Tools" target="_blank">GitHub</a> </div> <script type="module">const n=document.getElementById("hamburgerBtn"),e=document.getElementById("mobileNav");n?.addEventListener("click",()=>{e?.classList.toggle("open")});document.addEventListener("keydown",t=>{t.key==="Escape"&&e?.classList.remove("open")});</script> <main>  <div class="content-page"> <h1>Quick Start</h1> <p>
+This guide will help you get up and running quickly with the Honeybee-PH toolkit for
+<a href="https://www.rhino3d.com/" target="_blank">Rhino / Grasshopper</a>.
+      The toolkit allows you to add Passive House data to your Honeybee models, then export to WUFI-Passive and PHPP.
+</p> <img src="/img/quick-start/quick_start_diagram.svg" alt="Basic usage diagram: Grasshopper to WUFI-Passive or PHPP"> <p>
+The simplest usage of the Honeybee-PH toolkit is demonstrated below. For detailed tutorials on full Passive House modeling,
+      check out <a href="/resources/">Resources</a>.
+</p> <h2>1. Create the HB-Model</h2> <p>
+We need a valid Honeybee model to work with. For this example, we'll start with a basic box created using
+      normal Grasshopper geometry tools and standard Honeybee components. No Honeybee-PH tools yet.
+</p> <img src="/img/quick-start/basic_honeybee_model.png" alt="Basic Honeybee model in Grasshopper"> <p>Previewing the Honeybee model at this point shows a simple box with 4 sides, a roof, and a floor:</p> <img src="/img/quick-start/basic_honeybee_vis.png" alt="Basic Honeybee model preview"> <h2>2. HB-Model &rarr; HBJSON</h2> <p>
+Next, write out the Honeybee Model to an HBJSON file using the standard "HB Dump Objects" Honeybee Component.
+      Still just basic Honeybee — no Honeybee-PH tools yet.
+</p> <img src="/img/quick-start/basic_honeybee_to_HBJSON.png" alt="Write Honeybee model to HBJSON"> <h2>3a. HBJSON &rarr; WUFI-Passive</h2> <p>
+Now it's time to use the new Honeybee-PH tools. To pass our model to WUFI-Passive,
+      use the "HBPH - Write WUFI XML" component. It reads the HBJSON file, rebuilds the model,
+      and converts it to a WUFI-XML document.
+</p> <img src="/img/quick-start/basic_honeybee_to_WUFI.png" alt="Export to WUFI-XML"> <p>The new WUFI-XML document can be opened in WUFI-Passive. Go to "File / Open..."</p> <img src="/img/quick-start/WUFI_open.png" alt="Open WUFI-Passive"> <p>
+Navigate to where you saved the WUFI-XML file, and select it. If you don't see the file, make sure you're filtering for
+<code>*.xml</code> files.
+</p> <img src="/img/quick-start/WUFI_XML.png" alt="Navigate to WUFI-XML file"> <p>Select the file, click "Open", and your Honeybee model geometry should appear in the WUFI preview panel.</p> <img src="/img/quick-start/WUFI_success.png" alt="WUFI-Passive preview showing the model"> <h2>3b. HBJSON &rarr; PHPP</h2> <p>
+To export to the Passive House Planning Package (PHPP), the process is similar. Since PHPP is a Microsoft Excel workbook,
+      we use a different Honeybee-PH tool. The key difference: the target PHPP file must be <strong>open at the same time</strong>
+as the Grasshopper file.
+</p> <p>Open a valid blank PHPP document alongside the Rhino / Grasshopper window:</p> <img src="/img/quick-start/PHPP_open.png" alt="Open PHPP alongside Grasshopper"> <p>
+With both files open, use the "HBPH - Write to PHPP" component to write data to the Excel file.
+      This component automatically writes to the active Excel document. If you're having trouble, close any other Excel documents.
+</p> <img src="/img/quick-start/PHPP_success.png" alt="PHPP with model data"> <h2>Next Steps</h2> <p>
+This example is the most basic model possible with minimal geometry and attribute assignments.
+      You can use normal Passive House modeling tools to finish your model, or use the many Honeybee-PH components to model
+      windows, mechanical systems, thermal bridges, and more — all directly in Grasshopper.
+</p> <p>
+For detailed component tutorials, check out the <a href="/resources/">Resources</a> section.
+</p> </div>  </main> <footer class="site-footer"> <div class="site-footer__left"> <span>PH-TOOLS</span> <span>&middot;</span> <a href="https://www.bldgtyp.com">bldgtyp, LLC</a> <span>&middot;</span> <a href="https://github.com/PH-Tools">GitHub</a> <span>&middot;</span> <a href="mailto:phtools@bldgtyp.com">phtools@bldgtyp.com</a> <span>&middot;</span> <a href="https://github.com/PH-Tools/honeybee_grasshopper_ph/blob/main/LICENSE">GPL-3.0</a> </div> </footer> <script type="module">const t=document.getElementById("themeToggle"),n=t?.querySelector(".icon-sun"),o=t?.querySelector(".icon-moon");function c(e){document.documentElement.setAttribute("data-theme",e);try{localStorage.setItem("ph-tools:theme",e)}catch{}n&&o&&(n.style.display=e==="dark"?"none":"",o.style.display=e==="dark"?"":"none")}const m=document.documentElement.getAttribute("data-theme")||"light";c(m);t?.addEventListener("click",()=>{const e=document.documentElement.getAttribute("data-theme");c(e==="dark"?"light":"dark")});</script> </body> </html>
