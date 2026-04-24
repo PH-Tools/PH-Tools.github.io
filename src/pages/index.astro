@@ -10,96 +10,34 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       Open-source tools for Passive House energy modeling. Build, certify, and export — all from Rhino&nbsp;/&nbsp;Grasshopper.
     </p>
     <div class="hero-actions">
-      <a href="/install/" class="btn btn-primary">Get Started</a>
-      <a href="https://github.com/PH-Tools/honeybee_grasshopper_ph/releases/latest/download/hbph_installer.ghx" class="btn btn-primary">Download Installer</a>
       <a href="https://docs.passivehousetools.com" class="btn btn-ghost" target="_blank">Documentation</a>
       <a href="https://github.com/PH-Tools" class="btn btn-ghost" target="_blank">GitHub</a>
     </div>
   </section>
 
-  <!-- Features -->
-  <section class="features">
-    <h2>Why Honeybee-PH?</h2>
-    <div class="feature-grid">
-      <div class="feature-item">
-        <h3>Adds to Existing Workflows</h3>
-        <p>Use your existing Honeybee modeling workflows to generate models for Passive House assessment and certification.</p>
-      </div>
-      <div class="feature-item">
-        <h3>Single Model</h3>
-        <p>Use one BIM model for all your assessments. From daylighting, to energy, to thermal comfort and full Passive House certification.</p>
-      </div>
-      <div class="feature-item">
-        <h3>Gain Control</h3>
-        <p>Configure your mechanical systems, detailed usage programs, and certification settings — all from within the familiar Grasshopper platform.</p>
-      </div>
-      <div class="feature-item">
-        <h3>Make Non-Residential Easy</h3>
-        <p>Dramatically simplifies non-residential building modeling with access to the huge Honeybee-Energy program library. Easily manage complex occupancy, lighting, and equipment loads.</p>
-      </div>
-      <div class="feature-item">
-        <h3>Simplify Certification</h3>
-        <p>Automate reporting of envelope types, thermal bridges, interior TFA/iCFA, and room-by-room ventilation airflows. Standardize your certification workflow.</p>
-      </div>
-      <div class="feature-item">
-        <h3>WUFI-Passive or PHPP</h3>
-        <p>Export to PHPP v9/v10 or WUFI-Passive. Multiple language options (English, Spanish, German) and unit systems (SI, IP).</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Getting Started -->
-  <section class="getting-started">
-    <h2>Getting Started</h2>
-    <p class="section-desc">Everything you need to start using PH-Tools.</p>
-    <div class="card-grid">
-      <a class="service-card" href="/install/">
-        <div class="service-card__title">Install</div>
-        <div class="service-card__subtitle">Download &amp; setup</div>
-        <div class="service-card__body">Install Honeybee-PH and its Grasshopper toolkit. Free and open-source.</div>
-      </a>
-
-      <a class="service-card" href="/quick-start/">
-        <div class="service-card__title">Quick Start</div>
-        <div class="service-card__subtitle">Get up and running</div>
-        <div class="service-card__body">Add Passive House data to your Rhino / Grasshopper models and export to WUFI-Passive or PHPP.</div>
-      </a>
-
-      <a class="service-card" href="https://docs.passivehousetools.com" target="_blank">
-        <div class="service-card__title">Docs</div>
-        <div class="service-card__subtitle">API reference</div>
-        <div class="service-card__body">Full documentation for all PH-Tools libraries and components.</div>
-      </a>
-
-      <a class="service-card" href="/resources/">
-        <div class="service-card__title">Resources</div>
-        <div class="service-card__subtitle">Learn &amp; explore</div>
-        <div class="service-card__body">Courses, tutorials, example files, and community links for Passive House modeling.</div>
-      </a>
-
-      <a class="service-card" href="/contact/">
-        <div class="service-card__title">Contact</div>
-        <div class="service-card__subtitle">Get help</div>
-        <div class="service-card__body">Report issues or connect with the PH-Tools community and development team.</div>
-      </a>
-    </div>
-  </section>
-
-  <!-- Project Cards -->
-  <section class="projects">
+  <!-- Projects -->
+  <section id="projects" class="projects">
     <h2>Projects</h2>
-    <p class="section-desc">Libraries and tools for Passive House workflows.</p>
+    <p class="section-desc">Toolkits and libraries for Passive House workflows.</p>
     <div class="card-grid">
-      <a class="service-card" href="https://docs.passivehousetools.com/honeybee-ph/" target="_blank">
+      <a class="service-card" href="/honeybee-ph/">
         <div class="service-card__title">Honeybee-PH</div>
-        <div class="service-card__subtitle">Passive House data model</div>
-        <div class="service-card__body">Extends Ladybug Tools with PH-style attributes for certification with WUFI-Passive or PHPP.</div>
+        <div class="service-card__subtitle">Passive House certification modeling</div>
+        <div class="service-card__body">
+          Add PH-style data to your Honeybee models and export to WUFI-Passive or PHPP.
+          Includes install guides, quick start, and tutorials.
+        </div>
+        <div class="service-card__repos">honeybee_ph &middot; PHX &middot; honeybee_grasshopper_ph</div>
       </a>
 
-      <a class="service-card" href="https://docs.passivehousetools.com/phx/" target="_blank">
-        <div class="service-card__title">PHX</div>
-        <div class="service-card__subtitle">Serialization engine</div>
-        <div class="service-card__body">Convert Honeybee-PH models to and from WUFI-Passive XML and PHPP Excel.</div>
+      <a class="service-card" href="/honeybee-revive/">
+        <div class="service-card__title">Honeybee-Revive</div>
+        <div class="service-card__subtitle">Deep energy retrofit analysis</div>
+        <div class="service-card__body">
+          Retrofit analysis and life-cycle carbon optimization for existing buildings.
+          Evaluate improvement scenarios with the ADORB methodology.
+        </div>
+        <div class="service-card__repos">honeybee_revive &middot; PH-ADORB &middot; honeybee_grasshopper_revive</div>
       </a>
 
       <a class="service-card" href="https://ph-tools.github.io/CarbonCheck/" target="_blank">
@@ -108,22 +46,47 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <div class="service-card__body">Evaluate envelope decisions through a carbon lens for building assemblies.</div>
       </a>
 
-      <a class="service-card" href="https://docs.passivehousetools.com/honeybee-revive/" target="_blank">
-        <div class="service-card__title">Honeybee-REVIVE</div>
-        <div class="service-card__subtitle">Deep energy retrofits</div>
-        <div class="service-card__body">Retrofit analysis and modeling for Honeybee. Evaluate improvement scenarios and phased upgrades.</div>
+      <a class="service-card" href="https://github.com/PH-Tools/PH_Baseliner" target="_blank">
+        <div class="service-card__title">PH_Baseliner</div>
+        <div class="service-card__subtitle">Baseline energy modeling</div>
+        <div class="service-card__body">Generate code-baseline energy models for comparison with Passive House performance targets.</div>
       </a>
 
-      <a class="service-card" href="https://docs.passivehousetools.com/ph-adorb/" target="_blank">
-        <div class="service-card__title">PH-ADORB</div>
-        <div class="service-card__subtitle">Life-cycle optimization</div>
-        <div class="service-card__body">Annualized De-carbonization of Retrofitted Buildings. Carbon and cost optimization for retrofit projects.</div>
-      </a>
-
-      <a class="service-card" href="https://docs.passivehousetools.com/ph-units/" target="_blank">
-        <div class="service-card__title">PH-Units</div>
+      <a class="service-card" href="https://github.com/PH-Tools/PH_units" target="_blank">
+        <div class="service-card__title">PH_Units</div>
         <div class="service-card__subtitle">Unit conversions</div>
         <div class="service-card__body">Handle SI/IP conversions for all common building science quantities in Passive House workflows.</div>
+      </a>
+
+      <a class="service-card" href="https://github.com/PH-Tools/honeybee_ref" target="_blank">
+        <div class="service-card__title">honeybee_ref</div>
+        <div class="service-card__subtitle">Reference standards</div>
+        <div class="service-card__body">Reference building energy code data and standards for use with Honeybee models.</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="getting-started">
+    <h2>Get Involved</h2>
+    <p class="section-desc">PH-Tools is free and open-source.</p>
+    <div class="card-grid">
+      <a class="service-card" href="/contact/">
+        <div class="service-card__title">Contact</div>
+        <div class="service-card__subtitle">Get help</div>
+        <div class="service-card__body">Report issues or connect with the PH-Tools community and development team.</div>
+      </a>
+
+      <a class="service-card" href="https://github.com/PH-Tools" target="_blank">
+        <div class="service-card__title">GitHub</div>
+        <div class="service-card__subtitle">Source code</div>
+        <div class="service-card__body">Browse repositories, open issues, and contribute to PH-Tools development.</div>
+      </a>
+
+      <a class="service-card" href="https://docs.passivehousetools.com" target="_blank">
+        <div class="service-card__title">Docs</div>
+        <div class="service-card__subtitle">API reference</div>
+        <div class="service-card__body">Full documentation for all PH-Tools libraries and components.</div>
       </a>
     </div>
   </section>

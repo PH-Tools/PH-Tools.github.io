@@ -331,6 +331,31 @@ a:hover {
   color: var(--fg-muted);
 }
 
+.service-card__repos {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--fg-faint);
+  margin-top: 0.75rem;
+  letter-spacing: 0.02em;
+}
+
+/* ---------- Breadcrumbs ---------- */
+.breadcrumb {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--fg-muted);
+  margin: 0 0 0.5rem;
+  letter-spacing: 0.02em;
+}
+.breadcrumb a {
+  color: var(--fg-muted);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--fg-faint);
+}
+.breadcrumb a:hover {
+  color: var(--fg);
+}
+
 /* ========== FEATURES (home page feature blocks) ========== */
 .features {
   max-width: 1100px;
