@@ -1,0 +1,60 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  activePage?: string;
+}
+
+const { title = "PH-Tools — Passive House Modeling for Grasshopper", activePage } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Open-source Passive House modeling tools for Rhino / Grasshopper. Export to WUFI-Passive and PHPP." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+    <script is:inline>
+      (function () {
+        try {
+          var t = localStorage.getItem("ph-tools:theme");
+          if (t) document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <Header activePage={activePage} />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+    <script>
+      const themeBtn = document.getElementById("themeToggle");
+      const iconSun = themeBtn?.querySelector(".icon-sun") as HTMLElement | null;
+      const iconMoon = themeBtn?.querySelector(".icon-moon") as HTMLElement | null;
+
+      function setTheme(t: string) {
+        document.documentElement.setAttribute("data-theme", t);
+        try { localStorage.setItem("ph-tools:theme", t); } catch (e) {}
+        if (iconSun && iconMoon) {
+          iconSun.style.display = t === "dark" ? "none" : "";
+          iconMoon.style.display = t === "dark" ? "" : "none";
+        }
+      }
+
+      const current = document.documentElement.getAttribute("data-theme") || "light";
+      setTheme(current);
+
+      themeBtn?.addEventListener("click", () => {
+        const cur = document.documentElement.getAttribute("data-theme");
+        setTheme(cur === "dark" ? "light" : "dark");
+      });
+    </script>
+  </body>
+</html>

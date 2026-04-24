@@ -1,0 +1,60 @@
+---
+interface Props {
+  activePage?: string;
+}
+const { activePage } = Astro.props;
+---
+
+<header class="site-header">
+  <a href="/" class="site-header__logo">
+    <svg class="logo-mark" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+      <rect x="2" y="14" width="28" height="16" rx="2" fill="currentColor" opacity="0.15"/>
+      <path d="M16 2L2 14h28L16 2z" fill="currentColor"/>
+      <rect x="12" y="18" width="8" height="12" rx="1" fill="currentColor" opacity="0.5"/>
+    </svg>
+    PH-TOOLS
+  </a>
+
+  <nav class="site-header__nav">
+    <a href="/install/" class={activePage === "install" ? "nav-active" : ""}>Install</a>
+    <a href="/quick-start/" class={activePage === "quick-start" ? "nav-active" : ""}>Quick Start</a>
+    <a href="/resources/" class={activePage === "resources" ? "nav-active" : ""}>Resources</a>
+    <a href="/contact/" class={activePage === "contact" ? "nav-active" : ""}>Contact</a>
+    <a href="https://docs.passivehousetools.com" target="_blank">Docs</a>
+    <a href="https://github.com/PH-Tools" target="_blank">GitHub</a>
+    <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+      </svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </svg>
+    </button>
+  </nav>
+
+  <button class="hamburger" id="hamburgerBtn" aria-label="Open menu">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M3 12h18M3 6h18M3 18h18"/>
+    </svg>
+  </button>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="/install/">Install</a>
+  <a href="/quick-start/">Quick Start</a>
+  <a href="/resources/">Resources</a>
+  <a href="/contact/">Contact</a>
+  <a href="https://docs.passivehousetools.com" target="_blank">Docs</a>
+  <a href="https://github.com/PH-Tools" target="_blank">GitHub</a>
+</div>
+
+<script>
+  const hamburger = document.getElementById("hamburgerBtn");
+  const mobileNav = document.getElementById("mobileNav");
+  hamburger?.addEventListener("click", () => {
+    mobileNav?.classList.toggle("open");
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") mobileNav?.classList.remove("open");
+  });
+</script>

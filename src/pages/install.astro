@@ -1,0 +1,136 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Install — PH-Tools" activePage="install">
+  <div class="content-page">
+    <h1>Install Honeybee-PH</h1>
+    <p>Honeybee-PH and its Grasshopper toolkit are free and open-source. Download and give it a try.</p>
+
+    <h2>YouTube Walk-Through</h2>
+    <p>Watch a detailed step-by-step walk-through showing both the LadybugTools installation and the Honeybee-PH installation:</p>
+    <p><a href="https://youtu.be/DvH_Wxf1D8A" target="_blank">Installation Walk-Through</a></p>
+
+    <h2>Requirements</h2>
+    <p>Make sure your system has all required software installed and working:</p>
+    <ul>
+      <li><a href="https://www.rhino3d.com/" target="_blank">Rhino-3D v8</a></li>
+      <li><a href="https://www.ladybug.tools/" target="_blank">Ladybug-Tools v1.8</a></li>
+      <li><a href="https://wufi.de/en/software/wufi-passive/" target="_blank">WUFI-Passive</a></li>
+      <li><a href="https://passivehouse.com/04_phpp/04_phpp.htm" target="_blank">PHPP v9 or v10</a></li>
+      <li>Windows v10+ or MacOS v13+</li>
+    </ul>
+
+    <div class="callout warning">
+      <strong>Please Note:</strong> The installation file for Honeybee-PH does <strong>NOT</strong> include either
+      <a href="https://wufi.de/en/software/wufi-passive/" target="_blank">WUFI-Passive</a> or
+      <a href="https://passivehouse.com/04_phpp/04_phpp.htm" target="_blank">PHPP</a>.
+      Those programs must be purchased separately. Honeybee-PH is an interface for those tools, not a replacement for them.
+    </div>
+
+    <h2>Rhino / Grasshopper Installation</h2>
+    <p>Follow the steps below to install the <strong>Honeybee-PH</strong> toolkit:</p>
+    <ol>
+      <li>Ensure you have <strong>Rhino v8</strong> installed.</li>
+      <li><strong>Windows:</strong> Use the <a href="https://app.pollination.cloud/cad-plugins" target="_blank">One-Click Installer for Grasshopper</a> to install Ladybug Tools.</li>
+      <li><strong>macOS:</strong> Use the <a href="https://www.food4rhino.com/en/app/ladybug-tools" target="_blank">Food4Rhino Installer</a> to install Ladybug Tools.</li>
+      <li>
+        In Grasshopper, use the Ladybug Tools "LB Versioner" component to update to the latest version.
+        <img src="/img/install/lb_versioner.png" alt="LB Versioner component in Grasshopper" />
+      </li>
+      <li>
+        Download the HBPH Installation File:
+        <a href="https://github.com/PH-Tools/honeybee_grasshopper_ph/releases/latest/download/hbph_installer.ghx" class="btn btn-primary" style="margin-left: 0.5rem; font-size: 0.85rem;">Download Installer</a>
+      </li>
+      <li>Open the HBPH Installation File using Rhino / Grasshopper and follow the instructions shown. <em>(Note: On Windows, if you run into permissions trouble, try opening Rhino "as administrator".)</em></li>
+      <li>Restart Rhino and Grasshopper to ensure all new components are properly loaded. Done!</li>
+    </ol>
+
+    <h2>Install Trouble?</h2>
+    <p>If you run into errors during install, check:</p>
+    <ul>
+      <li>Do you have <strong>Rhino v8</strong>? HBPH is not compatible with earlier versions.</li>
+      <li>
+        On Windows, are you using the Ladybug Tools
+        <a href="https://app.pollination.cloud/cad-plugins" target="_blank">One-Click Installer for Grasshopper</a>?
+        This is the recommended method for all Windows users.
+      </li>
+      <li>
+        Do you already have Ladybug-Tools and Honeybee installed? Use the Honeybee "HB Check Versions" component to verify your Python, Radiance, and OS installs.
+        <img src="/img/install/hb_config.png" alt="HB Check Versions component" />
+      </li>
+      <li>Do you have Ladybug Tools <strong>v1.8 or later</strong>? Use "LB Versioner" to update if needed.</li>
+      <li>
+        Are you using <a href="https://www.pollination.cloud/" target="_blank">Pollination</a>? It may install Ladybug-Tools in a different directory, requiring additional permissions. Try running Rhino "as administrator."
+        <img src="/img/install/run_admin.png" alt="Run Rhino as Administrator" />
+      </li>
+    </ul>
+
+    <h2>Error on Windows?</h2>
+    <p>In some circumstances you may get an error during installation due to a Python directory issue. Try these steps:</p>
+    <ol>
+      <li>Using <strong>File Explorer</strong>, navigate to <code>C:\Users\--you--\AppData\Roaming\</code></li>
+      <li>
+        Look for a directory named <code>Python</code> in there.
+        <img src="/img/install/bad_python.png" alt="Unexpected Python directory" />
+      </li>
+      <li>If you have a directory named <code>Python</code>, <strong>delete it</strong> — it isn't supposed to be there.</li>
+      <li>Now try running the Grasshopper Installer one more time.</li>
+    </ol>
+
+    <div class="callout">
+      <strong>Still having trouble?</strong> Check out the <a href="/contact/">Contact</a> page for ways to get in touch with us.
+    </div>
+
+    <h2>Manual Installation</h2>
+    <p>
+      In some cases, users cannot use the automatic installer — for instance if Rhino cannot be run in admin mode.
+      Manual installation is possible but <strong>not recommended</strong> for most users.
+    </p>
+
+    <h3>Step 1: Locate your ladybug_tools folder</h3>
+    <p>For most users, this will be:</p>
+    <div class="path-block">C:\Program Files\ladybug_tools\</div>
+    <p>but for some users it may be:</p>
+    <div class="path-block">C:\Users\--Your-User-Name--\ladybug_tools\</div>
+
+    <h3>Step 2: Run PowerShell</h3>
+    <p>Open <strong>PowerShell</strong> from the Windows Start menu.</p>
+
+    <h3>Step 3: pip install the required libraries</h3>
+    <p>Run one of the following commands depending on where your <code>ladybug_tools</code> folder is:</p>
+    <div class="path-block">C:\"Program Files"\ladybug_tools\python\python -m pip install honeybee-ph PHX</div>
+    <p><em>OR</em></p>
+    <div class="path-block">C:\Users\--Your-User-Name--\ladybug_tools\python\python -m pip install honeybee-ph PHX</div>
+
+    <h3>Step 4: Verify installation</h3>
+    <p>After installation completes, look in your <code>ladybug_tools\python\Lib\site-packages\</code> folder for directories named <strong>honeybee_ph</strong>, <strong>PHX</strong>, and <strong>ph_units</strong>. If present, installation succeeded.</p>
+
+    <h3>Step 5: Download Grasshopper tools</h3>
+    <p>Download the latest Honeybee-PH Grasshopper Components:</p>
+    <blockquote><a href="https://github.com/PH-Tools/honeybee_grasshopper_ph/archive/refs/heads/main.zip">Grasshopper Tools (zip)</a></blockquote>
+
+    <h3>Step 6: Copy honeybee_ph_rhino</h3>
+    <p>Unzip the download and copy the <code>honeybee_ph_rhino</code> folder into your <code>ladybug_tools\python\lib\site-packages\</code> folder.</p>
+    <img src="/img/install/copy_GH_libraries.png" alt="Copy Grasshopper libraries" />
+
+    <h3>Step 7: Copy user objects</h3>
+    <p>Copy the <code>honeybee_grasshopper_ph\user_objects</code> folder into your Grasshopper UserObjects folder:</p>
+    <div class="path-block">C:\Users\--Your-User-Name--\AppData\Roaming\Grasshopper\UserObjects\</div>
+    <img src="/img/install/copy_GH_components.png" alt="Copy Grasshopper components" />
+
+    <h3>Step 8: Download Component-IO</h3>
+    <p>Download the Grasshopper Component-IO library:</p>
+    <blockquote><a href="https://github.com/PH-Tools/PH_GH_Component_IO/archive/refs/heads/main.zip">Grasshopper Component-IO (zip)</a></blockquote>
+
+    <h3>Step 9: Copy ph_gh_component_io</h3>
+    <p>Copy the <code>ph_gh_component_io</code> folder into your <code>ladybug_tools\python\lib\site-packages\</code> folder.</p>
+    <img src="/img/install/copy_GH_IO_library.png" alt="Copy Component-IO library" />
+
+    <p>This completes the manual installation. You should now be able to open Rhino and Grasshopper and use the Honeybee-PH components.</p>
+
+    <div class="callout">
+      <strong>Still having trouble?</strong> Check out the <a href="/contact/">Contact</a> page for ways to get in touch with us.
+    </div>
+  </div>
+</BaseLayout>

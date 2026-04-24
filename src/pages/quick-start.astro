@@ -1,0 +1,84 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Quick Start — PH-Tools" activePage="quick-start">
+  <div class="content-page">
+    <h1>Quick Start</h1>
+    <p>
+      This guide will help you get up and running quickly with the Honeybee-PH toolkit for
+      <a href="https://www.rhino3d.com/" target="_blank">Rhino / Grasshopper</a>.
+      The toolkit allows you to add Passive House data to your Honeybee models, then export to WUFI-Passive and PHPP.
+    </p>
+
+    <img src="/img/quick-start/quick_start_diagram.svg" alt="Basic usage diagram: Grasshopper to WUFI-Passive or PHPP" />
+
+    <p>
+      The simplest usage of the Honeybee-PH toolkit is demonstrated below. For detailed tutorials on full Passive House modeling,
+      check out <a href="/resources/">Resources</a>.
+    </p>
+
+    <h2>1. Create the HB-Model</h2>
+    <p>
+      We need a valid Honeybee model to work with. For this example, we'll start with a basic box created using
+      normal Grasshopper geometry tools and standard Honeybee components. No Honeybee-PH tools yet.
+    </p>
+    <img src="/img/quick-start/basic_honeybee_model.png" alt="Basic Honeybee model in Grasshopper" />
+
+    <p>Previewing the Honeybee model at this point shows a simple box with 4 sides, a roof, and a floor:</p>
+    <img src="/img/quick-start/basic_honeybee_vis.png" alt="Basic Honeybee model preview" />
+
+    <h2>2. HB-Model &rarr; HBJSON</h2>
+    <p>
+      Next, write out the Honeybee Model to an HBJSON file using the standard "HB Dump Objects" Honeybee Component.
+      Still just basic Honeybee — no Honeybee-PH tools yet.
+    </p>
+    <img src="/img/quick-start/basic_honeybee_to_HBJSON.png" alt="Write Honeybee model to HBJSON" />
+
+    <h2>3a. HBJSON &rarr; WUFI-Passive</h2>
+    <p>
+      Now it's time to use the new Honeybee-PH tools. To pass our model to WUFI-Passive,
+      use the "HBPH - Write WUFI XML" component. It reads the HBJSON file, rebuilds the model,
+      and converts it to a WUFI-XML document.
+    </p>
+    <img src="/img/quick-start/basic_honeybee_to_WUFI.png" alt="Export to WUFI-XML" />
+
+    <p>The new WUFI-XML document can be opened in WUFI-Passive. Go to "File / Open..."</p>
+    <img src="/img/quick-start/WUFI_open.png" alt="Open WUFI-Passive" />
+
+    <p>
+      Navigate to where you saved the WUFI-XML file, and select it. If you don't see the file, make sure you're filtering for
+      <code>*.xml</code> files.
+    </p>
+    <img src="/img/quick-start/WUFI_XML.png" alt="Navigate to WUFI-XML file" />
+
+    <p>Select the file, click "Open", and your Honeybee model geometry should appear in the WUFI preview panel.</p>
+    <img src="/img/quick-start/WUFI_success.png" alt="WUFI-Passive preview showing the model" />
+
+    <h2>3b. HBJSON &rarr; PHPP</h2>
+    <p>
+      To export to the Passive House Planning Package (PHPP), the process is similar. Since PHPP is a Microsoft Excel workbook,
+      we use a different Honeybee-PH tool. The key difference: the target PHPP file must be <strong>open at the same time</strong>
+      as the Grasshopper file.
+    </p>
+
+    <p>Open a valid blank PHPP document alongside the Rhino / Grasshopper window:</p>
+    <img src="/img/quick-start/PHPP_open.png" alt="Open PHPP alongside Grasshopper" />
+
+    <p>
+      With both files open, use the "HBPH - Write to PHPP" component to write data to the Excel file.
+      This component automatically writes to the active Excel document. If you're having trouble, close any other Excel documents.
+    </p>
+    <img src="/img/quick-start/PHPP_success.png" alt="PHPP with model data" />
+
+    <h2>Next Steps</h2>
+    <p>
+      This example is the most basic model possible with minimal geometry and attribute assignments.
+      You can use normal Passive House modeling tools to finish your model, or use the many Honeybee-PH components to model
+      windows, mechanical systems, thermal bridges, and more — all directly in Grasshopper.
+    </p>
+    <p>
+      For detailed component tutorials, check out the <a href="/resources/">Resources</a> section.
+    </p>
+  </div>
+</BaseLayout>

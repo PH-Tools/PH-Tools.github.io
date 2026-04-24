@@ -1,0 +1,92 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="PH-Tools — Open-Source Passive House Modeling">
+  <!-- Hero -->
+  <section class="hero graph-paper">
+    <h1>PH<span class="accent">-</span>Tools</h1>
+    <p class="tagline">
+      Open-source tools for Passive House energy modeling. Build, certify, and export — all from Rhino&nbsp;/&nbsp;Grasshopper.
+    </p>
+    <div class="hero-actions">
+      <a href="/install/" class="btn btn-primary">Get Started</a>
+      <a href="https://docs.passivehousetools.com" class="btn btn-secondary" target="_blank">Documentation</a>
+      <a href="https://github.com/PH-Tools" class="btn btn-secondary" target="_blank">GitHub</a>
+    </div>
+  </section>
+
+  <!-- Project Cards -->
+  <section class="projects">
+    <h2>Projects</h2>
+    <p class="section-desc">Libraries and tools for Passive House workflows.</p>
+    <div class="card-grid">
+      <a class="project-card" href="https://docs.passivehousetools.com/honeybee-ph/" target="_blank">
+        <h3>Honeybee-PH</h3>
+        <p>Passive House data model extending Ladybug Tools. Add PH-style attributes to Honeybee models for certification with WUFI-Passive or PHPP.</p>
+        <span class="card-tag">honeybee-ph</span>
+      </a>
+
+      <a class="project-card" href="https://docs.passivehousetools.com/phx/" target="_blank">
+        <h3>PHX</h3>
+        <p>Convert Honeybee-PH models to and from WUFI-Passive XML and PHPP Excel. The serialization engine behind PH-Tools exports.</p>
+        <span class="card-tag">PHX</span>
+      </a>
+
+      <a class="project-card" href="https://ph-tools.github.io/CarbonCheck/" target="_blank">
+        <h3>CarbonCheck</h3>
+        <p>Embodied carbon analysis for building assemblies. Evaluate envelope decisions through a carbon lens.</p>
+        <span class="card-tag">CarbonCheck</span>
+      </a>
+
+      <a class="project-card" href="https://docs.passivehousetools.com/honeybee-revive/" target="_blank">
+        <h3>Honeybee-REVIVE</h3>
+        <p>Retrofit analysis and deep energy retrofit modeling for Honeybee. Evaluate improvement scenarios and phased upgrades.</p>
+        <span class="card-tag">honeybee-REVIVE</span>
+      </a>
+
+      <a class="project-card" href="https://docs.passivehousetools.com/ph-adorb/" target="_blank">
+        <h3>PH-ADORB</h3>
+        <p>Annualized De-carbonization of Retrofitted Buildings. Life-cycle carbon and cost optimization for retrofit projects.</p>
+        <span class="card-tag">PH-ADORB</span>
+      </a>
+
+      <a class="project-card" href="https://docs.passivehousetools.com/ph-units/" target="_blank">
+        <h3>PH-Units</h3>
+        <p>Unit conversion library for Passive House workflows. Handle SI/IP conversions for all common building science quantities.</p>
+        <span class="card-tag">PH-Units</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features">
+    <h2>Why Honeybee-PH?</h2>
+    <div class="feature-grid">
+      <div class="feature-item">
+        <h3>Adds to Existing Workflows</h3>
+        <p>Use your existing Honeybee modeling workflows to generate models for Passive House assessment and certification.</p>
+      </div>
+      <div class="feature-item">
+        <h3>Single Model</h3>
+        <p>Use one BIM model for all your assessments. From daylighting, to energy, to thermal comfort and full Passive House certification.</p>
+      </div>
+      <div class="feature-item">
+        <h3>Gain Control</h3>
+        <p>Configure your mechanical systems, detailed usage programs, and certification settings — all from within the familiar Grasshopper platform.</p>
+      </div>
+      <div class="feature-item">
+        <h3>Make Non-Residential Easy</h3>
+        <p>Dramatically simplifies non-residential building modeling with access to the huge Honeybee-Energy program library. Easily manage complex occupancy, lighting, and equipment loads.</p>
+      </div>
+      <div class="feature-item">
+        <h3>Simplify Certification</h3>
+        <p>Automate reporting of envelope types, thermal bridges, interior TFA/iCFA, and room-by-room ventilation airflows. Standardize your certification workflow.</p>
+      </div>
+      <div class="feature-item">
+        <h3>WUFI-Passive or PHPP</h3>
+        <p>Export to PHPP v9/v10 or WUFI-Passive. Multiple language options (English, Spanish, German) and unit systems (SI, IP).</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

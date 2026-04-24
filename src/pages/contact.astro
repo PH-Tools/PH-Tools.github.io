@@ -1,0 +1,86 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Contact — PH-Tools" activePage="contact">
+  <div class="content-page">
+    <h1>Contact &amp; Help</h1>
+
+    <h2>PH-Tools</h2>
+    <p>
+      <a href="/">PH-Tools</a> is the umbrella project for all the software tools we've been building to make Passive House
+      energy modeling faster, easier, and more fun. The Honeybee-PH plugin is our newest toolkit, written for Honeybee from
+      the ground up to work seamlessly with Ladybug-Tools.
+    </p>
+
+    <h2>Get Help</h2>
+    <p>Having trouble and can't find the answer? See <a href="#how-to-ask-for-help">How to Ask for Help</a> below.</p>
+    <ul>
+      <li>Check the <a href="/resources/">Resources</a> page for detailed how-to guides and tutorials.</li>
+      <li>Installation issues? Check the <a href="/install/#install-trouble">Install</a> page.</li>
+      <li>Rhino or Grasshopper trouble? Check the <a href="https://discourse.mcneel.com/" target="_blank">Rhino Forum</a>.</li>
+      <li>Ladybug-Tools or Honeybee trouble? Check the <a href="https://discourse.ladybug.tools/" target="_blank">Ladybug-Tools Forum</a>.</li>
+      <li>
+        Can't find the answer? Try posting on the
+        <a href="https://discourse.ladybug.tools/" target="_blank">Ladybug-Tools Forum</a>.
+        Public questions become a resource for future users.
+      </li>
+      <li>Found a bug? Open a <a href="https://github.com/PH-Tools/honeybee_grasshopper_ph/issues" target="_blank">GitHub Issue</a>.</li>
+      <li>Still stuck? Email us at: <a href="mailto:phtools@bldgtyp.com">phtools@bldgtyp.com</a></li>
+    </ul>
+
+    <h2 id="how-to-ask-for-help">How to Ask for Help</h2>
+    <p>
+      We're happy to help, but we need enough information to understand what's happening.
+      Please include the following in any help request or forum post:
+    </p>
+
+    <h3>Current Behavior / Issue</h3>
+    <p>What is the problem? What scenario are you having trouble with? Be as specific as possible.</p>
+
+    <h3>Expected Behavior</h3>
+    <p>What did you expect to happen?</p>
+
+    <h3>What You've Tried</h3>
+    <p>What steps have you already taken to solve the problem?</p>
+
+    <h3>Environment Details</h3>
+    <ul>
+      <li>Operating System and version (Windows, Mac, etc.)</li>
+      <li>Rhino version</li>
+      <li>Ladybug Tools version</li>
+      <li>PHPP version and language (if exporting to PHPP)</li>
+      <li>WUFI-Passive version (if exporting to WUFI)</li>
+      <li>Versions of any other relevant plugins</li>
+    </ul>
+
+    <h3>Screenshots / Examples</h3>
+    <p>We can't see your computer — provide screenshots or example files so we can understand what's happening.</p>
+
+    <h3>Example Files</h3>
+    <p>When providing sample files, remember:</p>
+    <ul>
+      <li>We don't have access to your computer or network — ensure any linked files are internalized to the GH file.</li>
+      <li>For weather files, use the LBT download weather file tool — hard-coded paths will cause errors.</li>
+      <li>Geometry doesn't travel with the GH file automatically — pipelines won't work for the receiver.</li>
+      <li>We don't have the same GH plugins — remove anything other than vanilla GH, Honeybee, or Honeybee-PH components before sharing.</li>
+      <li>Distill the GH definition down to the bare minimum to isolate the issue. Often this reveals the problem.</li>
+    </ul>
+
+    <h2>Contributing</h2>
+    <p>
+      Honeybee-PH is open-source and freely available. If you'd like to contribute,
+      check out the <a href="https://github.com/PH-Tools/contributing" target="_blank">PH-Tools Contributing</a> docs.
+    </p>
+
+    <h2>Contact Us</h2>
+    <p>Email us at: <a href="mailto:phtools@bldgtyp.com">phtools@bldgtyp.com</a></p>
+
+    <h2>Relevant Links</h2>
+    <ul>
+      <li><a href="https://github.com/PH-Tools/honeybee_grasshopper_ph" target="_blank">honeybee-grasshopper-ph</a> — Grasshopper components</li>
+      <li><a href="https://github.com/PH-Tools/honeybee_ph" target="_blank">honeybee-ph</a> — Python data model</li>
+      <li><a href="https://github.com/PH-Tools/PHX" target="_blank">PHX</a> — WUFI/PHPP conversion engine</li>
+    </ul>
+  </div>
+</BaseLayout>

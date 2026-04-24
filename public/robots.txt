@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://passivehousetools.com/sitemap-index.xml
