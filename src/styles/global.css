@@ -248,11 +248,30 @@ a:hover {
   text-decoration: none;
 }
 
-/* ========== PROJECT CARDS ========== */
+/* ========== GETTING STARTED (nav cards) ========== */
+.getting-started {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  border-top: 1px solid var(--border);
+}
+.getting-started h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.5rem;
+}
+.getting-started .section-desc {
+  color: var(--fg-muted);
+  margin: 0 0 2rem;
+}
+
+/* ========== CARD GRID & SECTION LAYOUT ========== */
 .projects {
   max-width: 1100px;
   margin: 0 auto;
   padding: 4rem 2rem;
+  border-top: 1px solid var(--border);
 }
 .projects h2 {
   font-size: 1.6rem;
@@ -270,48 +289,47 @@ a:hover {
   gap: 1.25rem;
 }
 
-.project-card {
-  display: flex;
-  flex-direction: column;
-  background: var(--bg-elev);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 1.5rem;
-  transition: border-color 0.2s, box-shadow 0.2s;
+/* ========== SERVICE CARDS (brand guide) ========== */
+.service-card {
+  background-color: var(--bg-card, var(--bg-elev));
+  border: 1px solid var(--border-card, var(--border));
+  border-radius: var(--radius-sm);
+  padding: 40px 32px;
+  border-top: 3px solid var(--border-card, var(--border));
+  border-bottom: 2px solid var(--accent);
+  transition: all var(--transition-base, 0.2s ease);
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+.service-card:hover {
+  border-top-color: var(--highlight);
   text-decoration: none;
   color: inherit;
 }
-.project-card:hover {
-  border-color: var(--accent);
-  box-shadow: 0 2px 12px rgba(62, 147, 174, 0.08);
-  text-decoration: none;
-  color: inherit;
-}
-.project-card h3 {
-  font-size: 1.15rem;
+.service-card__title {
+  font-family: var(--font-sans);
   font-weight: 600;
-  margin: 0 0 0.5rem;
-  color: var(--fg);
-}
-.project-card p {
-  font-size: 0.9rem;
-  color: var(--fg-muted);
-  margin: 0 0 1rem;
-  flex: 1;
-}
-.project-card .card-tag {
-  display: inline-block;
-  font-size: 0.75rem;
-  font-weight: 500;
-  font-family: var(--font-mono);
+  font-size: 16px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   color: var(--accent-text);
-  background: var(--accent-light);
-  padding: 0.15rem 0.5rem;
-  border-radius: 4px;
-  align-self: flex-start;
+  margin-bottom: 12px;
 }
-[data-theme="dark"] .project-card .card-tag {
-  background: rgba(62, 147, 174, 0.15);
+.service-card__subtitle {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 20px;
+  color: var(--fg);
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+.service-card__body {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--fg-muted);
 }
 
 /* ========== FEATURES (home page feature blocks) ========== */
@@ -485,6 +503,7 @@ code {
   .hero h1 { font-size: 2rem; }
   .hero .tagline { font-size: 1rem; }
   .projects { padding: 2.5rem 1.5rem; }
+  .getting-started { padding: 2.5rem 1.5rem; }
   .features { padding: 2.5rem 1.5rem; }
   .card-grid { grid-template-columns: 1fr; }
   .feature-grid { grid-template-columns: 1fr; }
