@@ -7,23 +7,91 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     <p class="breadcrumb"><a href="/honeybee-revive/">Honeybee-Revive</a> / Resources</p>
     <h1>Resources</h1>
 
-    <h2>Honeybee-Revive API Reference</h2>
-    <p><a href="https://docs.passivehousetools.com/honeybee-revive/" target="_blank">docs.passivehousetools.com/honeybee-revive/</a></p>
-
-    <h2>PH-ADORB API Reference</h2>
-    <p><a href="https://docs.passivehousetools.com/ph-adorb/" target="_blank">docs.passivehousetools.com/ph-adorb/</a></p>
-
-    <h2>Presentations</h2>
+    <h2>API Reference</h2>
     <ul>
-      <li><a href="https://youtu.be/e4HVtPkaRWY?si=N8HGeFfe4ENgKO5x" target="_blank">Sept. 2025 | PH-Accelerator: How to Make Passive House Certification Modeling Easier (1 hour)</a></li>
-      <li><a href="https://www.youtube.com/watch?v=l0T2UfkgsM8" target="_blank">Sept. 2024 | PH-Accelerator: Improving our Passive House Modeling Tools (1 hour)</a></li>
+      <li><a href="https://docs.passivehousetools.com/honeybee-revive/" target="_blank">Honeybee-Revive docs</a></li>
+      <li><a href="https://docs.passivehousetools.com/ph-adorb/" target="_blank">PH-ADORB docs</a></li>
+    </ul>
+
+    <h2 id="validation">Validation Test Cases</h2>
+    <p>
+      Honeybee-Revive has been validated against the
+      <a href="https://github.com/Phius-ResearchComittee/REVIVE/releases/tag/v24.2.0" target="_blank">Phius KMR Example model</a>
+      for both resiliency simulations and ADORB cost calculations. The test model is a single-zone, single-family home
+      with a below-grade basement and two on-grade floor surfaces.
+    </p>
+
+    <h3>Resiliency Comparison</h3>
+    <p>
+      Peak-week resiliency simulations were compared between the Phius GUI tool and Honeybee-Revive
+      for both winter (extreme cold week) and summer (extreme hot week) assessment periods.
+      The comparison covers indoor environment (dry-bulb, RH, SET comfort temperature), outdoor conditions,
+      internal gains, window gain/loss, and ventilation airflow.
+    </p>
+    <p><strong>Key findings:</strong></p>
+    <ul>
+      <li>Very close alignment across key interior air properties (dry-bulb, RH, SET) in both winter and summer.</li>
+      <li>Outdoor boundary conditions are aligned, with minor variations (+/- 0.1&deg;C) due to different weather file processing methods.</li>
+      <li>Internal gains (people, lighting, equipment) are aligned between models.</li>
+      <li>Window solar gain and heat loss show good alignment.</li>
+    </ul>
+    <p><strong>Known differences:</strong></p>
+    <ul>
+      <li><strong>Kiva ground solver</strong> — Phius GUI uses KIVA; Honeybee does not currently support it natively.</li>
+      <li><strong>Thermal comfort model</strong> — SET output requires the Pierce comfort model, which requires a temporary patch in Honeybee.</li>
+      <li><strong>Infiltration parameters</strong> — Different Temperature/Velocity Term Coefficients produce a minor difference in infiltration airflow.</li>
+    </ul>
+    <p>
+      <a href="https://github.com/PH-Tools/honeybee_REVIVE_grasshopper/tree/main/tests/resilience/comparison#readme" target="_blank">
+        Full resiliency comparison with charts and model files &rarr;
+      </a>
+    </p>
+
+    <h3>ADORB Cost Comparison</h3>
+    <p>
+      Full annual EnergyPlus simulations were executed for both the Phius GUI and Honeybee-Revive models,
+      and ADORB costs were calculated from the results. The Phius case uses the
+      <a href="https://github.com/Phius-ResearchComittee/REVIVE/blob/main/REVIVE2024/adorb.py" target="_blank">Phius GUI ADORB calculator</a>,
+      while Honeybee-Revive uses the <a href="https://github.com/PH-Tools/PH_ADORB" target="_blank">PH-ADORB library</a>.
+    </p>
+    <p><strong>Key findings:</strong></p>
+    <ul>
+      <li>Good alignment in simulated indoor conditions, internal gains, and ventilation airflows.</li>
+      <li>Heating and cooling energy consumption show good alignment in both summer and winter.</li>
+      <li>Operational energy ADORB costs (purchase + CO<sub>2</sub>) are closely aligned.</li>
+      <li>Grid transition PV-costs are aligned between both tools.</li>
+    </ul>
+    <p><strong>Known differences:</strong></p>
+    <ul>
+      <li><strong>Mechanical equipment</strong> — Phius GUI uses hard-coded residential systems; Honeybee-Revive uses NREL OpenStudio Standards templates, which don't match perfectly.</li>
+      <li><strong>Construction measure costs</strong> — A bug in the Phius GUI duplicates construction material costs at year 0, leading to erroneously high ADORB costs. This is corrected in Honeybee-Revive.</li>
+      <li><strong>Year-0 CO<sub>2</sub></strong> — Phius GUI omits construction material CO<sub>2</sub> at year 0; Honeybee-Revive includes it.</li>
+    </ul>
+    <p>
+      <a href="https://github.com/PH-Tools/honeybee_REVIVE_grasshopper/tree/main/tests/adorb/comparison#readme" target="_blank">
+        Full ADORB cost comparison with charts and model files &rarr;
+      </a>
+    </p>
+
+    <h2>Model Files</h2>
+    <p>Test model files and Grasshopper scripts used in validation:</p>
+    <ul>
+      <li><a href="https://github.com/PH-Tools/honeybee_REVIVE_grasshopper/blob/main/tests/phius_rv2024_model.hbjson" target="_blank">Honeybee-REVIVE HBJSON Model</a></li>
+      <li><a href="https://github.com/PH-Tools/honeybee_REVIVE_grasshopper/blob/main/tests/phius_rv2024_model.gh" target="_blank">Grasshopper Model Generation Script</a></li>
+      <li><a href="https://github.com/PH-Tools/honeybee_REVIVE_grasshopper/blob/main/tests/phius_rv2024_simulate_resiliency.gh" target="_blank">Grasshopper Resiliency Simulation Script</a></li>
     </ul>
 
     <h2>Related Repositories</h2>
     <ul>
+      <li><a href="https://github.com/PH-Tools/honeybee_REVIVE_grasshopper" target="_blank">honeybee_REVIVE_grasshopper</a> — Grasshopper components</li>
       <li><a href="https://github.com/PH-Tools/honeybee_revive" target="_blank">honeybee_revive</a> — Python data model for retrofit analysis</li>
-      <li><a href="https://github.com/PH-Tools/PH_ADORB" target="_blank">PH-ADORB</a> — Life-cycle carbon and cost optimization</li>
-      <li><a href="https://github.com/PH-Tools/honeybee_grasshopper_revive" target="_blank">honeybee_grasshopper_revive</a> — Grasshopper components</li>
+      <li><a href="https://github.com/PH-Tools/PH_ADORB" target="_blank">PH-ADORB</a> — ADORB cost calculation engine</li>
+    </ul>
+
+    <h2>Phius REVIVE Reference</h2>
+    <ul>
+      <li><a href="https://github.com/Phius-ResearchComittee/REVIVE/releases/tag/v24.2.0" target="_blank">Phius REVIVE v24.2.0</a> — KMR Example model and GUI tool</li>
+      <li><a href="https://www.phius.org/" target="_blank">Phius</a> — Passive House Institute US</li>
     </ul>
   </div>
 </BaseLayout>

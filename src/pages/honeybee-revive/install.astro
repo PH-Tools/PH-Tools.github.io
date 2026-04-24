@@ -6,32 +6,71 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
   <div class="content-page">
     <p class="breadcrumb"><a href="/honeybee-revive/">Honeybee-Revive</a> / Install</p>
     <h1>Install Honeybee-Revive</h1>
-    <p>Honeybee-Revive and its Grasshopper toolkit are free and open-source. Download and give it a try.</p>
+    <p>
+      Honeybee-Revive and its Grasshopper toolkit are free and open-source.
+      The installer will set up the Grasshopper components along with the core
+      <a href="https://pypi.org/project/honeybee-REVIVE/" target="_blank">Honeybee-REVIVE</a> and
+      <a href="https://pypi.org/project/PH-ADORB/" target="_blank">PH-ADORB</a> Python packages.
+    </p>
 
     <h2>Requirements</h2>
     <p>Make sure your system has all required software installed and working:</p>
     <ul>
       <li><a href="https://www.rhino3d.com/" target="_blank">Rhino-3D v8</a></li>
-      <li><a href="https://www.ladybug.tools/" target="_blank">Ladybug-Tools v1.8</a></li>
+      <li>
+        <a href="https://www.ladybug.tools/" target="_blank">Ladybug-Tools</a> with
+        <a href="https://github.com/ladybug-tools/honeybee-core" target="_blank">Honeybee-Core</a> and
+        <a href="https://github.com/ladybug-tools/honeybee-energy" target="_blank">Honeybee-Energy</a>
+      </li>
       <li>Windows v10+ or MacOS v13+</li>
     </ul>
+
+    <div class="callout warning">
+      <strong>Please Note:</strong> You must have
+      <a href="https://github.com/ladybug-tools/honeybee-core" target="_blank">Honeybee-Core</a> and
+      <a href="https://github.com/ladybug-tools/honeybee-energy" target="_blank">Honeybee-Energy</a>
+      already installed before installing Honeybee-Revive.
+      <strong>Windows</strong> users should use the
+      <a href="https://app.pollination.cloud/cad-plugins" target="_blank">Pollination installer</a>, while
+      <strong>Mac</strong> users should use the
+      <a href="https://www.food4rhino.com/en/app/ladybug-tools" target="_blank">Food4Rhino installer</a>.
+    </div>
 
     <h2>Rhino / Grasshopper Installation</h2>
     <p>Follow the steps below to install the <strong>Honeybee-Revive</strong> toolkit:</p>
     <ol>
       <li>Ensure you have <strong>Rhino v8</strong> installed.</li>
-      <li><strong>Windows:</strong> Use the <a href="https://app.pollination.cloud/cad-plugins" target="_blank">One-Click Installer for Grasshopper</a> to install Ladybug Tools.</li>
-      <li><strong>macOS:</strong> Use the <a href="https://www.food4rhino.com/en/app/ladybug-tools" target="_blank">Food4Rhino Installer</a> to install Ladybug Tools.</li>
+      <li>
+        <strong>Windows:</strong> Use the
+        <a href="https://app.pollination.cloud/cad-plugins" target="_blank">Pollination Installer</a>
+        to install Ladybug Tools.
+      </li>
+      <li>
+        <strong>macOS:</strong> Use the
+        <a href="https://www.food4rhino.com/en/app/ladybug-tools" target="_blank">Food4Rhino Installer</a>
+        to install Ladybug Tools.
+      </li>
       <li>
         In Grasshopper, use the Ladybug Tools "LB Versioner" component to update to the latest version.
       </li>
       <li>
         Download the Honeybee-Revive Installation File:
-        <a href="https://github.com/PH-Tools/honeybee_grasshopper_revive/releases/latest/download/hb_revive_installer.ghx" class="btn btn-primary" style="margin-left: 0.5rem; font-size: 0.85rem;">Download Installer</a>
+        <a href="https://github.com/PH-Tools/honeybee_REVIVE_grasshopper/releases/latest/download/hb_revive_installer.ghx" class="btn btn-primary" style="margin-left: 0.5rem; font-size: 0.85rem;">Download Installer</a>
       </li>
-      <li>Open the Installation File using Rhino / Grasshopper and follow the instructions shown.</li>
+      <li>
+        Open the Installation File (<code>hb_revive_installer.ghx</code>) using Rhino / Grasshopper and follow the instructions shown.
+        <em>(Note: On Windows, if you run into permissions trouble, try opening Rhino "as administrator".)</em>
+      </li>
       <li>Restart Rhino and Grasshopper to ensure all new components are properly loaded. Done!</li>
     </ol>
+
+    <h2>What Gets Installed</h2>
+    <p>The installer will set up the following on your system:</p>
+    <ul>
+      <li><strong>Grasshopper UserObjects</strong> — the Honeybee-Revive Grasshopper components (.ghuser files)</li>
+      <li><strong>honeybee-REVIVE</strong> — the core Python data model (<a href="https://pypi.org/project/honeybee-REVIVE/" target="_blank">PyPI</a>)</li>
+      <li><strong>PH-ADORB</strong> — the ADORB cost calculation engine (<a href="https://pypi.org/project/PH-ADORB/" target="_blank">PyPI</a>)</li>
+    </ul>
 
     <div class="callout">
       <strong>Having trouble?</strong> Check out the <a href="/contact/">Contact</a> page for ways to get in touch with us.
