@@ -2,10 +2,10 @@
    PH-Tools Landing — Design System
    ============================================
    Tokens auto-update from the bldgtyp CDN.
-   See: https://bldgtyp.github.io/branding/
+   See: https://bldgtyp.github.io/bt-branding/
    ============================================ */
 
-@import url('https://bldgtyp.github.io/branding/tokens/tokens.css');
+@import url('https://bldgtyp.github.io/bt-branding/tokens/tokens.css');
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700&family=JetBrains+Mono:wght@300;400&display=swap');
 
 /* ---------- Local aliases → branding tokens ----------

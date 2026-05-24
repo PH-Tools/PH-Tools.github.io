@@ -4,7 +4,7 @@ Public landing page for [passivehousetools.com](https://passivehousetools.com) �
 
 ## Architecture Overview
 
-PH-Tools has **two web properties** sharing the same [bldgtyp design system](https://bldgtyp.github.io/branding/):
+PH-Tools has **two web properties** sharing the same [bldgtyp design system](https://bldgtyp.github.io/bt-branding/):
 
 ```
 passivehousetools.com          ← THIS REPO (landing page)
@@ -38,7 +38,7 @@ docs.passivehousetools.com     ← PH-Tools/ph-docs (developer docs hub)
 │                                                             │
 │  ┌──────────────────────┐    ┌───────────────────────────┐  │
 │  │  ph-tools.github.io/ │    │  bldgtyp.github.io/       │  │
-│  │  CarbonCheck/        │    │  branding/                │  │
+│  │  CarbonCheck/        │    │  bt-branding/             │  │
 │  │                      │    │                           │  │
 │  │  CarbonCheck app.    │    │  Design tokens CSS/JSON   │  │
 │  │  Separate repo,      │    │  imported by both sites   │  │
@@ -110,13 +110,13 @@ PH-Tools.github.io/
 
 Both this site and ph-docs import the same bldgtyp design tokens:
 
-- **Tokens CSS**: `https://bldgtyp.github.io/branding/tokens/tokens.css`
+- **Tokens CSS**: `https://bldgtyp.github.io/bt-branding/tokens/tokens.css`
 - **Fonts**: Outfit (sans) + JetBrains Mono (code) via Google Fonts
 - **Colors**: `--accent: #7a9424` (sage green), `--highlight: #DC2626` (red)
 - **Themes**: Light (default) and dark, toggled via `data-theme` attribute, persisted in `localStorage`
 - **Graph paper**: CSS background pattern using accent color at low opacity
 
-Source: [bldgtyp/branding](https://github.com/bldgtyp/branding)
+Source: [bldgtyp/bt-branding](https://github.com/bldgtyp/bt-branding)
 
 ## Development
 
@@ -155,6 +155,6 @@ Full migration plan and checklist: [`honeybee_grasshopper_ph/WEBSITE_CONSOLIDATI
 | [PH-Tools/ph-docs](https://github.com/PH-Tools/ph-docs) | Developer docs hub | [docs.passivehousetools.com](https://docs.passivehousetools.com) |
 | [PH-Tools/honeybee_grasshopper_ph](https://github.com/PH-Tools/honeybee_grasshopper_ph) | Grasshopper plugin + redirect pages | [ph-tools.github.io/honeybee_grasshopper_ph/](https://ph-tools.github.io/honeybee_grasshopper_ph/) |
 | [PH-Tools/CarbonCheck](https://github.com/PH-Tools/CarbonCheck) | Embodied carbon tool | [ph-tools.github.io/CarbonCheck/](https://ph-tools.github.io/CarbonCheck/) |
-| [bldgtyp/branding](https://github.com/bldgtyp/branding) | Design tokens & components | [bldgtyp.github.io/branding/](https://bldgtyp.github.io/branding/) |
+| [bldgtyp/bt-branding](https://github.com/bldgtyp/bt-branding) | Design tokens & components | [bldgtyp.github.io/bt-branding/](https://bldgtyp.github.io/bt-branding/) |
 | [PH-Tools/honeybee_ph](https://github.com/PH-Tools/honeybee_ph) | Core Python data model | — |
 | [PH-Tools/PHX](https://github.com/PH-Tools/PHX) | WUFI/PHPP conversion engine | — |
