@@ -2,13 +2,13 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="Honeybee-Revive — PH-Tools" activePage="honeybee-revive">
+<BaseLayout title="Honeybee-Revive | PH-Tools" activePage="honeybee-revive">
   <!-- Hero -->
   <section class="hero graph-paper">
     <h1>Honeybee<span class="accent">-</span>Revive</h1>
     <p class="tagline">
-      A Grasshopper plugin for deep energy retrofit analysis and life-cycle carbon optimization.
-      Add REVIVE-style data to your Honeybee models and calculate ADORB costs directly within Grasshopper.
+      A Grasshopper plugin for deep energy retrofit analysis and life-cycle carbon modeling.
+      Add REVIVE inputs to your Honeybee models and calculate ADORB costs right in Grasshopper.
     </p>
     <div class="hero-actions">
       <a href="/honeybee-revive/install/" class="btn btn-primary">Get Started</a>
@@ -19,9 +19,9 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
   <section class="getting-started">
     <div class="callout warning" style="max-width: 800px; margin: 0 auto;">
-      <strong>Please Note:</strong> Honeybee-REVIVE-Grasshopper is in no way affiliated with
-      <a href="https://www.phius.org/" target="_blank">Phius</a>, and the library is neither reviewed nor approved
-      by Phius for use in complying with the REVIVE program. This library is for <strong>research and testing purposes only</strong>.
+      <strong>Note:</strong> Honeybee-REVIVE-Grasshopper is not affiliated with
+      <a href="https://www.phius.org/" target="_blank">Phius</a>, and Phius has not reviewed or approved it
+      for REVIVE program compliance. Use it for <strong>research and testing only</strong>.
     </div>
   </section>
 
@@ -30,53 +30,53 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     <h2>Why Honeybee-Revive?</h2>
     <div class="feature-grid">
       <div class="feature-item">
-        <h3>ADORB Cost Calculation</h3>
-        <p>Calculate the Annualized De-carbonization of Retrofitted Buildings (ADORB) cost directly within Grasshopper. Combines operational energy costs, CO<sub>2</sub> emissions costs, construction measure costs, and grid transition costs into a single present-value metric.</p>
+        <h3>ADORB cost calculation</h3>
+        <p>Calculate Annualized De-carbonization of Retrofitted Buildings (ADORB) costs directly in Grasshopper. It rolls operational energy costs, CO<sub>2</sub> emissions costs, construction measures, and grid transition costs into one present-value metric.</p>
       </div>
       <div class="feature-item">
-        <h3>Resiliency Simulation</h3>
-        <p>Run peak-week resiliency simulations for both summer and winter extreme conditions. Evaluate indoor SET comfort temperatures, heat index, and air quality during grid outage scenarios.</p>
+        <h3>Resiliency simulation</h3>
+        <p>Run peak-week resiliency simulations for extreme summer and winter conditions. Check indoor SET comfort temperatures, heat index, and air quality during grid outages.</p>
       </div>
       <div class="feature-item">
         <h3>Built on Honeybee</h3>
-        <p>Extends your existing Honeybee and Ladybug Tools workflows. Uses EnergyPlus for all simulations — no additional simulation engines required. Compatible with standard Honeybee-Energy components.</p>
+        <p>Works alongside standard Honeybee-Energy components and runs all simulations in EnergyPlus, so you don't need a separate engine.</p>
       </div>
       <div class="feature-item">
-        <h3>Construction Measures</h3>
-        <p>Model the full life-cycle cost of construction measures including material purchase, labor, and recurring maintenance and replacement costs over the analysis period.</p>
+        <h3>Construction measures</h3>
+        <p>Track full life-cycle costs for retrofit measures, including materials, labor, maintenance, and replacement over the analysis period.</p>
       </div>
       <div class="feature-item">
-        <h3>Carbon + Cost</h3>
-        <p>Combine operational and embodied carbon analysis with financial modeling. Account for energy purchase costs, CO<sub>2</sub> emissions costs, and grid transition fees in a single cumulative present-value analysis.</p>
+        <h3>Carbon and cost</h3>
+        <p>Combine operational and embodied carbon with financial modeling. Account for energy costs, CO<sub>2</sub> emissions costs, and grid transition fees in one cumulative present-value calculation.</p>
       </div>
       <div class="feature-item">
-        <h3>Validated Against Phius GUI</h3>
-        <p>Tested against the Phius KMR reference model for both resiliency simulations and ADORB cost calculations. See the <a href="/honeybee-revive/resources/#validation">validation results</a> for detailed comparisons.</p>
+        <h3>Validated against Phius GUI</h3>
+        <p>Tested against the Phius KMR reference model for both resiliency simulations and ADORB cost calculations. See the <a href="/honeybee-revive/resources/#validation">validation results</a> for side-by-side comparisons.</p>
       </div>
     </div>
   </section>
 
   <!-- Getting Started -->
   <section class="getting-started">
-    <h2>Getting Started</h2>
-    <p class="section-desc">Everything you need to start using Honeybee-Revive.</p>
+    <h2>Getting started</h2>
+    <p class="section-desc">Install the plugin, read the docs, or inspect the validation models.</p>
     <div class="card-grid">
       <a class="service-card" href="/honeybee-revive/install/">
         <div class="service-card__title">Install</div>
         <div class="service-card__subtitle">Download &amp; setup</div>
-        <div class="service-card__body">Install Honeybee-Revive and its Grasshopper toolkit. Free and open-source.</div>
+        <div class="service-card__body">Install Honeybee-Revive and its Grasshopper components. Free and open-source.</div>
       </a>
 
       <a class="service-card" href="https://docs.passivehousetools.com/honeybee-revive/" target="_blank">
         <div class="service-card__title">Docs</div>
         <div class="service-card__subtitle">API reference</div>
-        <div class="service-card__body">Full documentation for Honeybee-Revive libraries and components.</div>
+        <div class="service-card__body">Reference docs for the Honeybee-Revive Python libraries and Grasshopper components.</div>
       </a>
 
       <a class="service-card" href="/honeybee-revive/resources/">
         <div class="service-card__title">Resources</div>
         <div class="service-card__subtitle">Validation &amp; links</div>
-        <div class="service-card__body">Validation test cases, model files, and community links for Honeybee-Revive.</div>
+        <div class="service-card__body">Validation comparisons, test models, and related repositories.</div>
       </a>
     </div>
   </section>
@@ -84,22 +84,22 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
   <!-- Component Repos -->
   <section class="projects">
     <h2>Repositories</h2>
-    <p class="section-desc">The libraries that make up Honeybee-Revive.</p>
+    <p class="section-desc">The open-source repositories behind Honeybee-Revive.</p>
     <div class="card-grid">
       <a class="service-card" href="https://github.com/PH-Tools/honeybee_REVIVE_grasshopper" target="_blank">
         <div class="service-card__title">honeybee_REVIVE_grasshopper</div>
         <div class="service-card__subtitle">Grasshopper components</div>
-        <div class="service-card__body">User-facing Grasshopper components for building and analyzing REVIVE retrofit scenarios.</div>
+        <div class="service-card__body">Grasshopper components for building and running REVIVE retrofit scenarios.</div>
       </a>
       <a class="service-card" href="https://github.com/PH-Tools/honeybee_revive" target="_blank">
         <div class="service-card__title">honeybee_revive</div>
         <div class="service-card__subtitle">Python data model</div>
-        <div class="service-card__body">Extends Honeybee with retrofit analysis attributes and life-cycle carbon accounting.</div>
+        <div class="service-card__body">Python data model adding retrofit analysis and life-cycle carbon accounting to Honeybee.</div>
       </a>
       <a class="service-card" href="https://github.com/PH-Tools/PH_ADORB" target="_blank">
         <div class="service-card__title">PH-ADORB</div>
         <div class="service-card__subtitle">ADORB cost engine</div>
-        <div class="service-card__body">Annualized De-carbonization of Retrofitted Buildings. Carbon and cost optimization for retrofit projects.</div>
+        <div class="service-card__body">Python engine for Annualized De-carbonization of Retrofitted Buildings (ADORB) cost and carbon calculations.</div>
       </a>
     </div>
   </section>
